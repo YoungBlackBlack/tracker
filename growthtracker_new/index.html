@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNS Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#007AFF">
+</head>
+<body>
+    <h1 class="site-title">SNS 链接追踪器</h1>
+    
+    <div class="page-layout">
+        <!-- 左侧面板 -->
+        <div class="main-content">
+            <!-- 登录部分 -->
+            <div class="auth-section">
+                <div class="login-form" id="loginForm">
+                    <div class="form-row">
+                        <input type="email" id="email" placeholder="请输入邮箱" required>
+                        <input type="password" id="password" placeholder="请输入密码" required>
+                        <button type="submit" class="login-button">登录</button>
+                    </div>
+                </div>
+                
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <div class="info-row">
+                        <span class="user-email"></span>
+                        <span class="login-time">登录时间：<span class="last-login-time"></span></span>
+                        <button class="logout-button">退出登录</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 数据查询快捷入口 -->
+            <div class="quick-links">
+                <h2>数据查询</h2>
+                <div class="links-grid">
+                    <a href="http://bi.hifun.chat/public/question/73636d27-a756-4707-9916-19a6935a42f4" 
+                       class="query-card" 
+                       target="_blank">
+                        <div class="card-icon">📊</div>
+                        <div class="card-title">团队视频汇总</div>
+                        <div class="card-desc">查看团队所有视频的数据统计和分析</div>
+                    </a>
+                    
+                    <a href="http://bi.hifun.chat/public/question/defe76dd-b1a2-412d-9c66-2084ca211078" 
+                       class="query-card"
+                       target="_blank">
+                        <div class="card-icon">📈</div>
+                        <div class="card-title">视频增长曲线</div>
+                        <div class="card-desc">分析单个视频的数据增长趋势</div>
+                    </a>
+                    
+                    <a href="http://bi.hifun.chat/public/question/fb0052aa-b2af-46a0-bc24-9c4b92809334" 
+                       class="query-card"
+                       target="_blank">
+                        <div class="card-icon">👤</div>
+                        <div class="card-title">个人视频数据</div>
+                        <div class="card-desc">查看个人所有视频的最新数据</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 链接输入部分 -->
+            <div class="input-section">
+                <textarea 
+                    id="linksInput" 
+                    placeholder="请输入要追踪的链接，每行一个...&#10;例如：&#10;https://example1.com&#10;https://example2.com"
+                    rows="10"
+                ></textarea>
+                <button id="trackButton" class="primary-button" aria-label="添加追踪">
+                    <div class="loading-spinner" style="display: none;"></div>
+                    <span class="button-text">
+                        <svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                            <path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                        添加追踪
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 右侧面板 -->
+        <div class="side-panel">
+            <div class="results-section">
+                <h2>处理结果</h2>
+                <div id="resultsList" class="results-list">
+                    <!-- 结果将通过 JavaScript 动态添加 -->
+                </div>
+            </div>
+            <div class="history-section">
+                <h2>历史记录</h2>
+                <div id="historyList" class="history-list">
+                    <!-- 历史记录将通过 JavaScript 动态添加 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
